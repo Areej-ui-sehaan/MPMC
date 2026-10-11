@@ -2,6 +2,11 @@
 ## 8086 Microprocessor: Architecture, Pin Diagram, Addressing Modes, Instruction Set, Assembler Directives & Interrupts
 
 > **Scope:** These notes cover **Module 2 only** (ECE3004 – Microprocessors and Microcontrollers). Every slide topic from the Module 2 deck is included: generations of microprocessors, 8086 overview, pins & signals (common/minimum/maximum mode), BIU–EU architecture, registers, flags, physical address calculation, all 12 addressing modes, all 6 instruction groups, string instructions, branch/loop instructions, assembler directives, procedures vs macros, modular programming and 8086 interrupts (IVT, interrupt processing, interrupt types).
+>
+> **This master file is also split into 3 topic-wise files (same content, easier to study/reprint):**
+> - **Part 1 — Architecture** → `MPMC_Module2_Part1_Architecture.md`
+> - **Part 2 — Addressing Modes** → `MPMC_Module2_Part2_Addressing_Modes.md`
+> - **Part 3 — Instruction Set, Directives & Programming** → `MPMC_Module2_Part3_Instruction_Set.md`
 
 ---
 
