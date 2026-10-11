@@ -180,6 +180,78 @@ A microprocessor is a semiconductor device made of electronic logic circuits, ca
 
 ---
 
+## 11A. Microprocessor vs Microcontroller (from PDF slides)
+
+**Differentiating features:**
+
+| Feature | Microprocessor | Microcontroller |
+|---------|----------------|-----------------|
+| Function | Processes the **general** task only | Both **processes and controls** the **specific** task |
+| Memory | **No** in-built memory (needs external RAM/ROM) | **In-built** ROM and RAM |
+| Application | General purpose (PC, modems, calculators, LED display boards) | Specific purpose (A/C, washing machine, home automation) |
+| Complexity | More complex, large number of instructions | Less complex, fewer instructions |
+| Cost | High (design time is more) | Low (design time is less) |
+| Architecture | **Von Neumann** (program and data in same memory) | **Harvard** (program and data in different memory) |
+| Example | 8085, 8086 | 8051 |
+
+**Detailed comparison:**
+
+| Aspect | Microprocessor | Microcontroller |
+|--------|----------------|-----------------|
+| Memory | Needs external memory & storage; flexible | On-chip memory (RAM, ROM, EEPROM) |
+| Peripherals | Needs additional parts via external bus; ideal for complex, powerful applications | Integrated peripherals: SPI, UART, RTI, ADC for direct hardware control |
+| Clock speed | Fast (GHz) for heavy-duty tasks | kHz – MHz; efficient for specific tasks |
+| Power consumption | High; no low-power option | Low; power-saving options |
+| Connectivity | Handles high-speed transfer | Supports low-to-moderate speed communication (I2C, SPI, UART) |
+| Operating system | Needs a full-fledged OS (Linux, Windows) | OS optional (no-OS or light-weight RTOS) |
+| Use case | Generic computing, highly complex/capacity systems | Compact systems, battery-powered, logic-processing devices |
+| Cost | Higher – suited for performance-driven applications | Lower – economical for mass production |
+
+## 11B. Why Learn Assembly? (PDF slide – layer stack)
+Layers from top to bottom: **Application → HLL (high-level language) → OS → Assembly → Microprogramming → Architecture**. Assembly sits just above the hardware layers, so it is the level where software directly controls the architecture.
+
+---
+
+## 11C. SUPPLEMENTARY – Encoders, Decoders, Registers & Other Hardware Blocks
+> **Note:** These topics are **not in the Module 1 PDF text**. The notes below are standard digital-electronics definitions added for exam coverage. Check them against your lecture notes.
+
+**Decoder**
+- Combinational circuit with *n* inputs and up to 2ⁿ outputs; exactly one output is active for each input code.
+- Example: 3-to-8 decoder; 2-to-4 decoder used for memory chip selection.
+- Used in: address decoding (selects the memory/I/O device), instruction decoding inside the control unit.
+
+**Encoder**
+- Reverse of a decoder: takes one active input among 2ⁿ lines and produces an *n*-bit binary code.
+- Example: 8-to-3 encoder (priority encoder is used for interrupt priority).
+- Used in: keyboard encoders, interrupt controllers.
+
+**Multiplexer (MUX) and Demultiplexer (DEMUX)**
+- MUX: many inputs → one output, selected by select lines (2ⁿ inputs need n select lines).
+- DEMUX: one input → many outputs, selected by select lines.
+
+**Flip-flop and Register**
+- Flip-flop: 1-bit memory element (SR, D, JK, T).
+- Register: group of flip-flops storing a multi-bit word (e.g., the 8085's 8-bit registers).
+
+**Other CPU registers (standard textbook)**
+- **Program Counter (PC):** address of the next instruction.
+- **Instruction Register (IR):** holds the instruction currently being decoded.
+- **Memory Address Register (MAR)** and **Memory Data Register (MDR).**
+- **Stack Pointer (SP):** points to the top of the stack.
+- **Flag register:** status bits such as Carry, Zero, Sign, Parity, Auxiliary Carry.
+
+**Fetch–Decode–Execute cycle (standard textbook)**
+1. Fetch the instruction from memory (address from PC) into IR; increment PC.
+2. Decode it in the control unit (decoder logic).
+3. Execute it using the ALU and registers; store results in the accumulator or memory.
+
+**Memory types (standard textbook; PDF slides also mention RAM, ROM, EEPROM)**
+- **RAM:** read-write, volatile.
+- **ROM:** read-only, non-volatile.
+- **EEPROM:** electrically erasable and programmable, non-volatile.
+
+---
+
 ## 12. Quick Revision Checklist
 - [ ] 4 computer components: Memory, I/O, ALU, Control Unit
 - [ ] 3 bus types: Address, Data, Control
@@ -191,3 +263,5 @@ A microprocessor is a semiconductor device made of electronic logic circuits, ca
 - [ ] Software tools: Assembler, Compiler, Linker, Loader, Locator, Debugger, Simulator
 - [ ] Hardware tools: ICE, Emulator, Logic Analyzer
 - [ ] Assembler → assembly; Compiler → high-level language
+- [ ] Microprocessor (no in-built memory, Von Neumann, e.g., 8085/8086) vs Microcontroller (on-chip RAM/ROM, Harvard, e.g., 8051)
+- [ ] Supplement: Decoder (n → 2ⁿ), Encoder (2ⁿ → n), MUX/DEMUX, Flip-flop/Register, PC, IR, MAR, MDR, SP, flags
